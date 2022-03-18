@@ -8,7 +8,8 @@
     "build:dev": "webpack --mode=development",
     "build:prod": "webpack --mode=production --node-env=production",
     "watch": "webpack --watch",
-    "serve": "webpack serve"
+    "serve": "webpack serve",
+    "postinstall": "husky install"
   },
   "author": "",
   "license": "ISC",
@@ -37,7 +38,9 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }  
+      "pre-commit": "echo 我要提交代码啦",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-push": "echo 我要推送代码啦"
+    }
   }
 }
