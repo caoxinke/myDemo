@@ -2,7 +2,3 @@
 . "$(dirname "$0")/_/husky.sh"
 # 提交记录检查
 npx commitlint --edit $1
-# 格式化检查
-npx format:check
-# eslint检查
-npx lint:check
