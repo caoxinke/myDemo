@@ -6,3 +6,12 @@
 
 # misc 
 .DS_Store
+
+# 代码覆盖率文件
+/coverage
+
+# e2e测试文件
+/cypress
+
+# 单元测试文件
+/test
