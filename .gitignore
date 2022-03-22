@@ -1,17 +1,8 @@
 # dependencies  npm包文件
 /node_modules
 
-# production  打包文件
-/build
-
-# misc 
-.DS_Store
+# dist  打包文件
+/dit
 
 # 代码覆盖率文件
 /coverage
-
-# e2e测试文件
-/cypress
-
-# 单元测试文件
-/test
