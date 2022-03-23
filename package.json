@@ -13,7 +13,7 @@
     "changelog:init": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "changelog:help": "conventional-changelog --help",
     "test": "jest --verbose ./test",
-    "e2e": "cypress run"
+    "e2e": "cypress install && cypress run"
   },
   "author": "",
   "license": "ISC",
