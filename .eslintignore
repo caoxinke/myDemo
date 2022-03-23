@@ -1,0 +1,4 @@
+cypress/*
+coverage/*
+test/*
+dist/*
