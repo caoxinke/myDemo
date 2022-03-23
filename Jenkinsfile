@@ -12,10 +12,5 @@ pipeline {
                 sh 'npm run build'
             }
         }
-        stage('it') {
-            steps {
-                sh 'npm run e2e'
-            }
-        }
     }
 }
