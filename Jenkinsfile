@@ -3,18 +3,18 @@ pipeline {
     stages {
         stage('ut') {
             steps {
-                sh 'npm install',
-                sh 'npm run test',
+                sh 'npm install'
+                sh 'npm run test'
             }
         },
         stage('build') {
             steps {
-                sh 'npm run build',
+                sh 'npm run build'
             }
         },
         stage('it') {
             steps {
-                sh 'npm run e2e',
+                sh 'npm run e2e'
             }
         },
     }
