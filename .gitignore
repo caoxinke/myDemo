@@ -2,7 +2,7 @@
 /node_modules
 
 # dist  打包文件
-/dit
+/dist
 
 # 代码覆盖率文件
 /coverage
