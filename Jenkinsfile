@@ -6,16 +6,16 @@ pipeline {
                 sh 'npm install'
                 sh 'npm run test'
             }
-        },
+        }
         stage('build') {
             steps {
                 sh 'npm run build'
             }
-        },
+        }
         stage('it') {
             steps {
                 sh 'npm run e2e'
             }
-        },
+        }
     }
 }
