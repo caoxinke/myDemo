@@ -3,13 +3,13 @@ pipeline {
     stages {
         stage('ut') {
             steps {
-                sh 'cnpm install'
-                sh 'cnpm run test'
+                sh 'npm install'
+                sh 'npm run test'
             }
         }
         stage('build') {
             steps {
-                sh 'cnpm run build'
+                sh 'npm run build'
             }
         }
     }
