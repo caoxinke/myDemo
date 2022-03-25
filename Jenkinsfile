@@ -1,6 +1,9 @@
 pipeline {
   agent {
-    docker 'node:latest'
+    docker {
+      image 'node:latest'
+    }
+
   }
   stages {
     stage('ut') {
@@ -17,6 +20,12 @@ pipeline {
     }
 
     stage('deploy') {
+      agent {
+        docker {
+          image 'node:latest'
+        }
+
+      }
       steps {
         sh '''rm -rf /opt/dist
 docker cp 61643f6ecf34:/var/jenkins_home/workspace/myDemo_master/dist /opt/dist'''
