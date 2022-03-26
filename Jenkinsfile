@@ -2,6 +2,12 @@ pipeline {
   agent any
   stages {
     stage('ut') {
+      agent {
+        docker {
+          image 'node:latest'
+        }
+
+      }
       steps {
         sh 'yarn install'
         sh 'yarn run test'
@@ -9,6 +15,12 @@ pipeline {
     }
 
     stage('build') {
+      agent {
+        dockerfile {
+          filename 'node:latest'
+        }
+
+      }
       steps {
         sh 'yarn run build'
       }
