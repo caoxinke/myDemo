@@ -1,10 +1,5 @@
 pipeline {
-  agent {
-    node {
-      label 'nodejs'
-    }
-
-  }
+  agent none
   stages {
     stage('ut') {
       steps {
