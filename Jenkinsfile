@@ -19,5 +19,11 @@ pipeline {
       }
     }
 
+    stage('deploy') {
+      steps {
+        sh 'mv /var/lib/docker/volumes/jenkins-data/_data/workspace/myDemo_master/dist /opt/workspace'
+      }
+    }
+
   }
 }
