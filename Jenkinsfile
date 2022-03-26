@@ -1,13 +1,12 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'node:latest'
+    }
+
+  }
   stages {
     stage('ut') {
-      agent {
-        docker {
-          image 'node:latest'
-        }
-
-      }
       steps {
         sh 'yarn install'
         sh 'yarn run test'
@@ -15,18 +14,13 @@ pipeline {
     }
 
     stage('build') {
-      agent {
-        dockerfile {
-          filename 'node:latest'
-        }
-
-      }
       steps {
         sh 'yarn run build'
       }
     }
 
     stage('deploy') {
+      agent any
       steps {
         sh 'mv /var/lib/docker/volumes/jenkins-data/_data/workspace/myDemo_master/dist /opt/workspace'
       }
