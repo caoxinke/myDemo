@@ -8,6 +8,7 @@ pipeline {
   stages {
     stage('ut') {
       steps {
+        sh 'git config --global http.version HTTP/1.1'
         sh 'yarn install'
         sh 'yarn run test'
       }
@@ -27,9 +28,10 @@ pipeline {
 
       }
       steps {
-        sh '''rm -rf /opt/dist
-docker cp 61643f6ecf34:/var/jenkins_home/workspace/myDemo_master/dist /opt/dist
-docker exec -d 61643f6ecf34 rm -rf /var/jenkins_home/workspace/myDemo_master'''
+        sh 'git config --global http.version HTTP/1.1'
+        sh 'rm -rf /opt/dist'
+        sh '''docker cp 61643f6ecf34:/var/jenkins_home/workspace/myDemo_master@2/dist /opt/dist
+'''
       }
     }
 
